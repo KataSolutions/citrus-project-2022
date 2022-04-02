@@ -36,6 +36,9 @@ using std::uint8_t;
 using std::size_t;
 using std::vector;
 
+//15 Locations, A -> ABCDEFGHIJKLMNO
+static const char *allLocations[] ={"A", "AB", "ABC", "ABCD", "ABCDE", "ABCDEF", "ABCDEFG", "ABCDEFGH", "ABCDEFGHI", "ABCDEFGHIJ", "ABCDEFGHIJK", "ABCDEFGHIJKL", "ABCDEFGHIJKLM", "ABCDEFGHIJKLMN", "ABCDEFGHIJKLMNO"};
+static const int allLocationsSize = 15;
 
 namespace qrcodegen {
 
@@ -256,8 +259,7 @@ QrCode QrCode::encodeBinary(const vector<uint8_t> &data, Ecc ecl) {
 }
 
 
-QrCode QrCode::encodeSegments(const vector<QrSegment> &segs, Ecc ecl,
-		int minVersion, int maxVersion, int mask, bool boostEcl) {
+QrCode QrCode::encodeSegments(const vector<QrSegment> &segs, Ecc ecl,int minVersion, int maxVersion, int mask, bool boostEcl) {
 	if (!(MIN_VERSION <= minVersion && minVersion <= maxVersion && maxVersion <= MAX_VERSION) || mask < -1 || mask > 7)
 		throw std::invalid_argument("Invalid value");
 	
