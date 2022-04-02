@@ -58,6 +58,14 @@ var temp;
 ];
 
 function update() {
+    
+    const mapAppear = document.querySelector('.maps');
+    const qr = document.querySelector('.qr');
+    const classBtn = document.querySelector('.btn');
+mapAppear.style.display = "list-item"
+qr.style.display = "list-item"
+classBtn.style.display = "none"
+
 
 randomnum = Math.floor(Math.random() * 15);
 temp = mapArray[randomnum]

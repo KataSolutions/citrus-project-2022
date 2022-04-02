@@ -1,4 +1,6 @@
 <script src="html5-qrcode.min_.js"></script>
+<script src="checking.js"></script>
+<link rel="stylesheet" type="text/css" href="./style1.css" />
 <style>
   .result{
     background-color: green;
@@ -22,6 +24,7 @@
 function onScanSuccess(qrCodeMessage) {
     document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
     console.log(qrCodeMessage)
+
 }
 function onScanError(errorMessage) {
   //handle scan error
@@ -30,3 +33,4 @@ var html5QrcodeScanner = new Html5QrcodeScanner(
     "reader", { fps: 10, qrbox: 250 });
 html5QrcodeScanner.render(onScanSuccess, onScanError);
 </script>
+<script src="new.js"></script>
