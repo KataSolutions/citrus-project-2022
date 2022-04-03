@@ -9,16 +9,54 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <h1 class="heading" style="color: #fff; font-family: 'Courier';">find QR code in location below for reward</h1>
 
+
+    <script src="https://kit.fontawesome.com/a71707a89a.js" crossorigin="anonymous"></script>
     <script src="timer.js"></script>
+    <script src="./modal.js"></script>
+    <link rel="stylesheet" href="./modalstyle.css"/>
 
     <div id="count_up_timer">
         <p>00:00:00</P>
     </div>
-    
+
+
     <!--<button id="stop_count_up_timer" onclick="clearInterval(timerVariable)">Stop Time</button>-->
 </head>
 
 <body>
+    <style>
+        .doubleUnderline { border-bottom: 3px double; }
+        .dottedUnderlinerightRapper { border-bottom: 1px dotted;
+            color: aliceblue;
+            margin: 0px; /* remove all margins to fit two divs in the container */
+  display: inline-block; /* display block elements in one line */
+  font-size: large;
+  font-size: 70px;
+         }
+         .dottedUnderlineleftRapper { border-bottom: 1px dotted;
+            color: aliceblue;
+            margin: 0px; /* remove all margins to fit two divs in the container */
+  display: inline-block; /* display block elements in one line */
+font-size: 70px;
+         }
+         p{
+            text-align: center;
+         }
+        
+        a {
+        border-bottom: 1px dotted;
+        text-decoration: none;
+        }
+        </style>
+   
+    <hr class="dash">
+    
+    <p><span id="one" class="dottedUnderlinerightRapper">&nbsp;&nbsp;&nbsp;</span><span id="two"  class="dottedUnderlineleftRapper">&nbsp;&nbsp;&nbsp;</span><span id="three" class="dottedUnderlinerightRapper">&nbsp;&nbsp;&nbsp;</span><span id="four" class="dottedUnderlinerightRapper">&nbsp;&nbsp;&nbsp;</span></p>
+    <p><span id="five" class="dottedUnderlinerightRapper"></span></p>
+
+        
+    <a class="meme" id="final" href="https://youtu.be/dQw4w9WgXcQ" style="display: none;">Final REWARD!!</a>
+
     <div class="main">
         <div id="wrap1" class="maps" style="display: none;">
 
@@ -75,9 +113,8 @@
         </script>
         
         </div>
-        <div class="box" id="boxx" style="width:490px;height:35px; background: white;"></div>
-    
-
+     <!--<   <div class="box" id="boxx" style="width:492px;height:35px; background: black;"></div> >-->
+        
 
     <script src="./index.js"></script>
 </body>

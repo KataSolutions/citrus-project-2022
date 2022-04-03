@@ -1,11 +1,16 @@
-
+var randomnum1 = Math.floor(Math.random() * 3 +1);
+console.log(randomnum1)
 
    
 const maps = document.querySelector('.maps');
 var randomnum = 0
+var pastrandomnum = 0
 
-var result
+var result;
 
+var count = 0
+
+var changer;
 
 var temp;
 
@@ -60,6 +65,18 @@ var finishedMaps = []
 
 ];
 
+if (randomnum1==3){
+    changer = 1
+} 
+
+if (randomnum1==2){
+    changer = 5
+}
+
+if (randomnum1==1){
+    changer = 10
+}
+
 function update() {
     var timerVariable = setInterval(countUpTimer, 1000);
     const mapAppear = document.querySelector('.maps');
@@ -70,9 +87,15 @@ qr.style.display = "list-item"
 classBtn.style.display = "none"
 
 
-randomnum = Math.floor(Math.random() * 15);
-temp = mapArray[randomnum]
 
+randomnum = Math.floor(Math.random() * 5 + changer);
+console.log(`Random:${randomnum}`)
+if(randomnum != pastrandomnum){
+temp = mapArray[randomnum]
+} else{
+    update()
+}
+randomnum = pastrandomnum
 let html = ''
 const li = `
       
@@ -114,8 +137,59 @@ function update2()
     if(partsRiddles.indexOf(result) !== -1){
         alert("Value exists!")
         finishedMaps.push(temp)
+console.log(result)
+const tag1 = document.querySelector('#one');
+const tag2 = document.querySelector('#two');
+const tag3 = document.querySelector('#three');
+const tag4 = document.querySelector('#four');
+const tag5 = document.querySelector('#five');
+/*
+if (result=="What did" || result=="Why" || result=="What do you"  ){
+tag1.textContent=result;
+console.log(tag1.textContent)
+count=count+1
+}
+
+if (result=="the computer" || result=="is a" || result=="get if you"  ){
+    tag2.textContent=result;
+    console.log(tag2.textContent)
+    count=count+1
+    }
+*/
+    if (result=="have for" || result=="computer so" || result=="cross a computer"  ){
+        tag3.textContent=result;
+        console.log(tag3.textContent)
+        count=count+1
+        }
+/*
+        if (result=="lunch?" || result=="smart?" || result=="with a hamburger?"  ){
+            tag4.textContent=result;
+            console.log(tag4.textContent)
+            count=count+1
+            }
+
+            if (result=="A big mac" || result=="it listens to its motherboard" || result=="It has a byte!"  ){
+                tag5.textContent=result;
+                console.log(tag5.textContent)
+                count=count+1
+                }  */
+                console.log("marker1")
+if(count==5){
+    alert("tada you finsihed hear is your final reward")
+    const finalReward = document.querySelector('#final');
+    finalReward.style.display = "list-item"
+}
+
+        const index = mapArray.indexOf(temp);
+        console.log("marker2")
+if (index > -1) {
+    mapArray.splice(index, 1); // 2nd parameter means remove one item only
+}
+        console.log(mapArray)
+        update()
     } else{
-        alert("Value does not exists!")
-        console.log(result)
+        alert("This qr code is not part of the hunt")
+        
     }
 }
+
