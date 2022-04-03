@@ -4,9 +4,12 @@
 const maps = document.querySelector('.maps');
 var randomnum = 0
 
+var result
+
+
 var temp;
 
-
+var finishedMaps = []
 
  const mapArray = [
     `
@@ -58,7 +61,7 @@ var temp;
 ];
 
 function update() {
-    
+    var timerVariable = setInterval(countUpTimer, 1000);
     const mapAppear = document.querySelector('.maps');
     const qr = document.querySelector('.qr');
     const classBtn = document.querySelector('.btn');
@@ -81,4 +84,38 @@ html += li;
 
 maps.innerHTML = html
 console.log(temp)
+}
+
+var html5QrcodeScanner = new Html5QrcodeScanner(
+    "reader", { fps: 10, qrbox: 250 });
+        
+function onScanSuccess(decodedText, decodedResult) {
+    // Handle on success condition with the decoded text or result.
+    console.log(`Scan result: ${decodedText}`, decodedResult);
+    // ...
+    html5QrcodeScanner.clear();
+    // ^ this will stop the scanner (video feed) and clear the scan area.
+}
+
+html5QrcodeScanner.render(onScanSuccess);
+
+
+
+
+
+function update2()
+{
+
+  
+  
+    var partsRiddles = ["What did", "the computer", "have for", "lunch?", "Why","is a","computer so","smart?", "What do you","get if you","cross a computer","with a hamburger?","A big mac","it listens to its motherboard","It has a byte!"];
+
+    // Check if a value exists in the fruits array
+    if(partsRiddles.indexOf(result) !== -1){
+        alert("Value exists!")
+        finishedMaps.push(temp)
+    } else{
+        alert("Value does not exists!")
+        console.log(result)
+    }
 }
