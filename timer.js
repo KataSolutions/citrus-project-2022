@@ -1,4 +1,4 @@
-var timerVariable = setInterval(countUpTimer, 1000);
+
 var totalSeconds = 0;
 
 function countUpTimer() {
