@@ -80,7 +80,9 @@ if (randomnum1==1){
 }
 
 function update() {
+
     var timerVariable = setInterval(countUpTimer, 1000);
+
     const mapAppear = document.querySelector('.maps');
     const qr = document.querySelector('.qr');
     const classBtn = document.querySelector('.btn');
@@ -172,31 +174,31 @@ const tag4 = document.querySelector('#four');
 const tag5 = document.querySelector('#five');
 
 if (result=="What did" || result=="Why " || result=="What do you"  ){
-tag1.textContent=result;
+tag1.textContent=`${result}_`;
 console.log(tag1.textContent)
 count=count+1
 }
 
 if (result=="the computer" || result=="is a" || result=="get if you"  ){
-    tag2.textContent=result;
+    tag2.textContent=`${result}_`;
     console.log(tag2.textContent)
     count=count+1
     }
 
     if (result=="have for" || result=="computer so" || result=="cross a computer"  ){
-        tag3.textContent=result;
+        tag3.textContent=`${result}&nbsp_` ;
         console.log(tag3.textContent)
         count=count+1
         }
 
         if (result=="lunch?" || result=="smart?" || result=="with a hamburger?"  ){
-            tag4.textContent=result;
+            tag4.textContent=`${result}_`;
             console.log(tag4.textContent)
             count=count+1
             }
 
             if (result=="A big mac" || result=="It listens to its motherboard!" || result=="It has a byte!"  ){
-                tag5.textContent=result;
+                tag5.textContent=`${result}_`;
                 console.log(tag5.textContent)
                 count=count+1
                 }  
