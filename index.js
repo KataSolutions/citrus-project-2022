@@ -65,6 +65,8 @@ var finishedMaps = []
 
 ];
 
+//every fifth location is the final one with answer
+
 if (randomnum1==3){
     changer = 1
 } 
@@ -90,11 +92,36 @@ classBtn.style.display = "none"
 
 randomnum = Math.floor(Math.random() * 5 + changer);
 console.log(`Random:${randomnum}`)
+if (count<5 || random == 5){
 if(randomnum != pastrandomnum){
 temp = mapArray[randomnum]
 } else{
     update()
 }
+}
+if (count<5 || random == 5){
+    if(randomnum != pastrandomnum){
+    temp = mapArray[randomnum]
+    } else{
+        update()
+    }
+    }
+    if (count<5 || random == 10){
+        if(randomnum != pastrandomnum){
+        temp = mapArray[randomnum]
+        } else{
+            update()
+        }
+        }
+
+        if (count<5 || random == 15){
+            if(randomnum != pastrandomnum){
+            temp = mapArray[randomnum]
+            } else{
+                update()
+            }
+            }
+    
 randomnum = pastrandomnum
 let html = ''
 const li = `
@@ -131,7 +158,7 @@ function update2()
 
   
   
-    var partsRiddles = ["What did", "the computer", "have for", "lunch?", "Why","is a","computer so","smart?", "What do you","get if you","cross a computer","with a hamburger?","A big mac","it listens to its motherboard","It has a byte!"];
+    var partsRiddles = ["What did", "the computer", "have for", "lunch?", "Why ","is a","computer so","smart?", "What do you","get if you","cross a computer","with a hamburger?","A big mac","It listens to its motherboard!","It had a byte!"];
 
     // Check if a value exists in the fruits array
     if(partsRiddles.indexOf(result) !== -1){
@@ -143,8 +170,8 @@ const tag2 = document.querySelector('#two');
 const tag3 = document.querySelector('#three');
 const tag4 = document.querySelector('#four');
 const tag5 = document.querySelector('#five');
-/*
-if (result=="What did" || result=="Why" || result=="What do you"  ){
+
+if (result=="What did" || result=="Why " || result=="What do you"  ){
 tag1.textContent=result;
 console.log(tag1.textContent)
 count=count+1
@@ -155,24 +182,24 @@ if (result=="the computer" || result=="is a" || result=="get if you"  ){
     console.log(tag2.textContent)
     count=count+1
     }
-*/
+
     if (result=="have for" || result=="computer so" || result=="cross a computer"  ){
         tag3.textContent=result;
         console.log(tag3.textContent)
         count=count+1
         }
-/*
+
         if (result=="lunch?" || result=="smart?" || result=="with a hamburger?"  ){
             tag4.textContent=result;
             console.log(tag4.textContent)
             count=count+1
             }
 
-            if (result=="A big mac" || result=="it listens to its motherboard" || result=="It has a byte!"  ){
+            if (result=="A big mac" || result=="It listens to its motherboard!" || result=="It has a byte!"  ){
                 tag5.textContent=result;
                 console.log(tag5.textContent)
                 count=count+1
-                }  */
+                }  
                 console.log("marker1")
 if(count==5){
     alert("tada you finsihed hear is your final reward")
